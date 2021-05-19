@@ -1,0 +1,7 @@
+
+2000:Kevin23
+1400:Mark21
+1000:car
+1000:snake
+500:snake
+100:Mary_21

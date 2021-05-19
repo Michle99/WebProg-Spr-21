@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <style>
+            .button {
+                        background-color: #140a4e; /* Green */
+                        border: none;
+                        color: white;
+                        padding: 15px 32px;
+                        text-align: center;
+                        text-decoration: none;
+                        display: inline-block;
+                        font-size: 16px;
+                        margin: 4px 2px;
+                        cursor: pointer;
+                    }
+        </style>
+        <script>
+            function checkValids() 
+            {
+                var form = document.getElementById("signin");
+
+                let e1 = document.getElementById("iderror");
+                let e2 = document.getElementById("firstnamerror");
+                let e3 = document.getElementById("lastnamerror");
+
+                //displaying the results of the inputs
+                let iD = document.getElementById("uid");
+                let fn = document.getElementById("ufn");
+                let ln = document.getElementById("uln");
+
+                //displaying the fields that are empty
+                let message = "You forgot to fill in the following field(s)";
+
+                
+                //  restore black color to any elements previously flagged
+                 colorize("iderror","black");
+                 colorize("firstnamerror","black");
+                 colorize("lastnamerror","black");
+
+                //checking the inputs are valid
+                if( form.identity.value.length == 0 ) 
+                { // name entered
+                    e1.innerHTML = "Please Enter an ID";
+	                alert(e1.innerHTML);
+                    message  += " ID,";
+	                colorize("iderror","red");
+                  
+	                return true;
+                }
+
+                if( form.firstname.value.length == 0 ) 
+                { // name entered
+                    e2.innerHTML = "Please Enter a First Name";
+                    alert(e2.innerHTML);
+                    message += " First Name, ";
+                    colorize("firstnamerror","red");
+	                return true;
+                }
+
+                if( form.lastname.value.length == 0 ) 
+                { // name entered
+	               e3.innerHTML = "Please Enter a Last Name";
+	               alert(e3.innerHTML);
+                   message += "Last Name";
+                   colorize("lastnamerror","red");
+	               return true;
+
+                }
+
+                if (form.value != 0)
+                {
+                    iD.innerHTML = "UserID: " + document.getElementById("identity").value;
+                    fn.innerHTML = "First Name: " + document.getElementById("firstname").value;
+                    ln.innerHTML = "Last Name: " + document.getElementById("lastname").value; 
+                }
+                else {
+                    alert(message);
+                }
+                
+                 // passed all the checks: OK to submit
+    
+                return true;
+                
+            }
+            
+
+            function colorize(elementName, color)
+            {
+                document.getElementById(elementName).style.color = color;
+                
+            }
+        </script>
+    </head>
+
+
+    <body style="background-color:#4d4170">
+        <header>
+            <h1 style="text-align: center;">Form Validation Using JavaScript</h1>
+           </header>
+           <form id="signin" style="text-align: center;">
+            <div id="iderror" style="color: red; text-decoration: underline"></div>
+             <label for="ident" id="identity_label">ID:  </label>
+             <input type="text" placeholder="Enter an ID" name="identity" id="identity" /><br><br>
+            
+
+             <div id="firstnamerror" style="color: red; text-decoration: underline"></div>
+             <label for="firstname" id="firstname_label">First Name: </label>
+             <input type="text" placeholder="Enter a first name" name="firstname" id="firstname" /><br><br>
+        
+   
+            <div id="lastnamerror" style="color: red; text-decoration: underline"></div>
+               <label for="lastname" id="lastname_label">Last Name: </label>
+               <input type="text"  placeholder="Enter a last name" name="lastname" id="lastname" /><br><br>
+             
+
+            <div class=" ">
+             <input type="button" class="button" onclick="return checkValids();" value="Add" />
+            </div>
+
+             <div class="out">
+               <p><span id="uid"></span></p>
+               <p><span id="ufn"></span></p>
+               <p><span id="uln"></span></p>
+            </div>
+
+           </form>
+    </body>
+</html>

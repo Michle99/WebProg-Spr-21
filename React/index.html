@@ -1,0 +1,93 @@
+<html>
+<head>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My First React Page</title>
+    <link rel="stylesheet" href="index.css" />
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script> 
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script> 
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script> 
+</head> 
+<body> 
+    <div id="root"></div> 
+    <button id="roundButton"></button>
+    <div id="theMenu">
+        <h2><a href="#">Home</a></h2>
+        <h2><a href="#">The good Stuff</a></h2>
+        <h2><a href="#">About</a></h2>
+    </div>
+
+    <div id="container"></div>
+    <div id="paragraf"></div>
+    <br>
+    <div id="scd"></div>
+    <div id="menu"></div>
+
+ 
+
+
+ <script type="text/babel"> 
+ /* 
+ ADD REACT CODE HERE 
+ */ 
+
+ReactDOM.render(<h1>My First React</h1>, document.getElementById("root"));
+ReactDOM.render(<h3>Summary of What I learnt</h3>, document.getElementById("container"));
+
+const element = (
+    <div>
+        <p>I learnt that React is powerful tool to enable developers to create a portable User Interface.
+    React is useful because it has automatic state management, like when an update to a page needs to be made; 
+    it's easier to do than the tradtional page.
+    The reason for React's popularity is because of the way it solves the problems we had with traditional
+    single page application development frameworks, starting with state management. 
+    React provides virtual DOM. Working with a virtual DOM is very fast and React will update the original
+    DOM as and when needed.</p>
+    <p>I liked that I was able to understand how the web worked, 
+        how pages are created, 
+        how each extensions that creates a webpages syncs to give a fine beauty.</p>
+    </div>);
+
+const list = (
+    <div>
+        <ul>
+            <p>How I created this page</p>
+            <li>Using React</li>
+            <li>ReactDOM</li>
+            <li>Babel min js</li>
+        </ul>
+    </div>
+);
+ReactDOM.render(
+        list,
+        document.getElementById('menu')
+    );
+    ReactDOM.render(
+        element,
+        document.getElementById('paragraf')
+    );
+
+</script>
+<!-- javascript -->
+<script>
+    var roundButton = document.querySelector("#roundButton");
+    var theMenu = document.querySelector("#theMenu");
+
+    roundButton.addEventListener("click", showMenu, false);
+    theMenu.addEventListener("click", hideMenu, false);
+
+    function showMenu(e) {
+      theMenu.classList.add("show");
+
+      document.body.style.overflow = "hidden";
+    }
+
+    function hideMenu(e) {
+      theMenu.classList.remove("show");
+      e.stopPropagation();
+
+      document.body.style.overflow = "auto";
+
+    }
+  </script> 
+</body> 
+</html>

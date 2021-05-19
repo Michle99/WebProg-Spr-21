@@ -1,0 +1,201 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+<title>Homework 5</title>
+    <style>
+   body {
+        background-color: rgb(41, 130, 214);
+		text-align: center;
+    }
+    h1 {
+        color: #180b85;
+    }
+        #center{
+            text-align: center;
+        }
+		.intro{
+			font-size: 20pt;
+		}
+		.timer{
+			font-size: 20pt;
+			color:rgb(236, 147, 87);
+		}
+		.time{
+			color: rgb(55, 0, 255);
+			font-weight: bold;
+		}
+        div#memory_board{
+            /* 
+            
+             */
+            padding:24px;
+            margin:0px auto;
+        }
+		
+        div#memory_board > div{
+            background-color:rgb(110, 83, 136);
+			background-size: cover;
+            border:rgb(65, 5, 30) 3px solid;
+            width:200px;
+            height:200px;
+            float:left;
+            margin:10px;
+            padding:20px;
+            font-size:64px;
+            cursor:pointer;
+            text-align:center;
+        }
+			table{
+			text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+            width:50%;
+		}
+		table, th, td {
+  			border: 1px solid rgb(125, 15, 158);
+			font-weight: bold;
+            text-align: center;
+			color: rgb(82, 7, 85);
+			font-size: 15pt;
+		}
+		td {
+  			height: 30px;
+  
+}
+                .Button3{
+	                background-color:rgb(170, 36, 81);
+	                -webkit-appearance: none;
+	                height: 50px;
+	                width: 100px;
+	                font-size: larger;
+	                color: #180b85;
+	                font-family: serif;
+	                text-align: center;
+	                /* border-radius: 15px; */
+}
+    </style>
+    <script>
+        var array_img_12 = ['a', 'b', 'c', 'd', 'e', 'f', 'b', 'a', 'e', 'd', 'f', 'c'];
+
+        var array_value = [];
+        var table_tile = [];
+        var show_tiles = 0;
+		var rate_value;
+        
+		function shuffle(a) {
+    		var j, x, i;
+    		for (i = a.length - 1; i > 0; i--) {
+        		j = Math.floor(Math.random() * (i + 1));
+					x = a[i];
+        			a[i] = a[j];
+        			a[j] = x;
+			}
+    	return a;
+		}
+        function show_board() {
+            show_tiles = 0;
+            var output = '';
+            shuffle(array_img_12);
+            for (var i = 0; i < array_img_12.length; i++) {
+                output += '<div id="tile_' + i + '" onclick="showarr_tiles(this,\'' + array_img_12[i] + '\')"></div>';
+            }
+            document.getElementById('memory_board').innerHTML = output;
+			function showTimer(callback, val) {
+        val = val || 180; 
+        var timer=setInterval(function() { 
+            callback(val);
+            if(val-- <= 0) { 
+                clearInterval(timer); 
+            } 
+        }, 1000);
+    }
+    new showTimer(function(val) {
+        
+		var timerMsg = (val >= 180 ? "03:00" : val >=130 ? "02:" + val%60 : val >= 120? "02:0"+ val%60:val>=60 ? "01:"+val%60: val >=10 ? "00:"+val:"00:0"+val);
+        document.getElementById("timer").textContent = timerMsg; 
+    });
+        }
+
+        
+
+        function showarr_tiles(tile, val) {
+            if (tile.innerHTML == "" && array_value.length < 2) {
+                tile.style.background = '#666666';
+                tile.innerHTML = '<img src="images/' + val + '.jpg"/>';
+                if (array_value.length == 0) {
+                    array_value.push(val);
+                    table_tile.push(tile.id);
+                } else if (array_value.length == 1) {
+                    array_value.push(val);
+                    table_tile.push(tile.id);
+                    if (array_value[0] == array_value[1]) {
+                        show_tiles += 2;
+
+                        array_value = [];
+                        table_tile = [];
+
+                        if (show_tiles == array_img_12.length) {
+                            alert("Great!... Generating New Sets of board");
+                            document.getElementById('memory_board').innerHTML = "";
+                            show_board();
+                        }
+                    } else {
+                        function flip2DeBack() {
+
+                            var table_tile1 = document.getElementById(table_tile[0]);
+                            var table_tile_2 = document.getElementById(table_tile[1]);
+                            table_tile1.style.background = "rgb(110, 83, 136)";
+                            table_tile1.innerHTML = "";
+                            table_tile_2.style.background = "rgb(110, 83, 136)";
+                            table_tile_2.innerHTML = "";
+
+                            array_value = [];
+                            table_tile = [];
+                        }
+						if (document.getElementById('t1').checked) {
+  							rate_value = document.getElementById('t1').value;
+						} else if (document.getElementById('t2').checked){
+							rate_value = document.getElementById('t2').value;
+						} else if (document.getElementById('t3').checked){
+							rate_value = document.getElementById('t3').value;
+						}
+
+                        setTimeout(flip2DeBack, rate_value);
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+
+<h1>MATCHING GAME</h1>
+<p><a href="hw4.html">Part A</a></p>
+<div class="intro"><p>To play, match a pair. If they don't match, no points.</p>
+	<p>Choose level of difficulty:</p>
+	<label class="time"><input id = "t1" type="radio" name="test" value="2000" checked> 3 seconds </label>
+<label class="time"><input id = "t2" type="radio" name="test" value="4000"> 5 seconds </label>
+<label class="time"><input id = "t3" type="radio" name="test" value="6000"> 8 seconds </label></div>
+	<button id="myBtn1" class="Button3" onClick="show_board()">PLAY</button>
+	<br>
+	<div class="timer">Game over in <span id="timer">00:00</span> minutes!</div>
+<div id="center">
+	<table>
+  <tr>
+    <td><a href="partB8.html">Press Easy</a></td>
+    <td><a href="partB10.html">Press Prolly Hard</a></td> 
+    <td><a href="partB12.html">Press Difficult</a></td>
+  </tr>
+</table>
+
+</div>
+	<br>
+
+
+<div id="memory_board"></div>
+
+
+</body>
+</html>

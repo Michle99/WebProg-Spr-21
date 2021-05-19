@@ -1,0 +1,127 @@
+.title h1 {
+    font-size: 24pt;
+    font-weight: bold;
+    text-shadow: 3px 3px #999999;
+    text-align: center;
+}
+
+body {
+    background-image: url("background.png");
+    font-size: 8pt;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+div {
+    margin: auto;
+}
+
+#banner_id {
+    background-image: url("bannerbackground.png");
+}
+
+#image_banner {
+    display: block;
+    margin: auto;
+}
+
+#review-percent {
+ position:absolute
+}
+
+sub {
+    vertical-align: sub;
+    font-size: x-small;
+    color: white;
+}
+
+.review-box {
+    column-count: 2;
+    padding: 2%;
+    vertical-align: top;
+    
+}
+.review-talk {
+    border: 2px solid gray;
+    background-color:#E8DC9B;
+    font-size: 8pt;
+
+    font-weight: bold;
+    padding: 9px;
+}
+
+
+#content-div {
+    margin: auto;
+    border: 4px solid gray;
+    max-width: 800px;
+    border-radius: 20px;
+}
+
+
+.left_section {
+    width: 550px;
+    margin-left: 0;
+    float: left;
+}
+#rottenbig_div {
+    background-image: url("rottenbackground.png");
+    background-repeat: repeat-x;
+    border-top-left-radius: 20px;
+
+    font-size: 48pt;
+    font-weight: bold;
+    color: red;
+    vertical-align: top;
+}
+#rot {
+    border-top-left-radius: 15px;
+}
+
+.right_section {
+    width: 250px;
+    background-color: #A2B964;
+    margin-left: 550px;
+    border-top-right-radius: 15px;
+
+}
+
+#img_overview {
+    border-top-right-radius: 15px;
+}
+
+#dl_movieinfos {
+    padding: 10pt;
+    font-size: 8pt;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+}
+
+.dt_filmstuff {
+    font-size: 10px;
+    font-weight: bold;
+    padding-top: 10px;
+}
+
+#ul_movielink {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+#total_reviews {
+    clear: left;
+    margin-top: 0;
+    background-color: #A2B964;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    text-align: center;
+}
+
+#validators_w3sc {
+    position: fixed ;
+    bottom: 0;
+    right: 0;
+}

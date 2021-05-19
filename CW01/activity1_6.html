@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>HTML Table Design</title>
+
+	<style>
+		table, th, td {
+			border: 1px solid black;
+
+		}
+	</style>
+</head>
+<body style="background-color:rgba(230, 134, 182, 0.815);">
+
+<h2 align="center">Activity 1</h2>
+<table  width="30%" height=20% align="center">
+    <caption>Tabling</caption>
+	<tr align = "center">
+		<td width=5% height=70 bgcolor="darkred">red cell</td>
+		<td width=15%  bgcolor="lightblue">light blue cell</td>
+	</tr>
+</table>
+<br>
+
+<table style= "width: 50%" align = "center"> 
+    <caption> CSC4370/6370 timetable </caption> 
+    <tr align = "left"> 
+        <td width=1> </td> 
+    <th width = 20> Monday </th> 
+    <th width = 10> Tuesday</th> 
+    <th width = 50> Wednesday </th> 
+    <th width = 40> Thursday</th> 
+     <th width = 40> Friday</th> 
+   </tr> 
+   <tr > 
+   <td bgcolor="salmon"> 6-7pm </td> 
+   <td > Look at website</td> 
+   <td > free </td> 
+   <td > Implementation </td> 
+   <td > free </td> 
+   <td > free </td> 
+   </tr> 
+   <tr> 
+   <td bgcolor="purple"> 7-8pm </td> 
+   <td > Take some notes</td> 
+   <td > free </td> 
+   <td > Implementation </td> 
+   <td > free </td> 
+   <td > free </td> 
+    </tr> 
+</table>
+<br>
+<br>
+
+<h2 align="center">Activity 2</h2>
+<table style= "width: 40%" align = "center"> 
+    <caption> CSC4370/6370 timetable </caption> 
+    <tr align = "center"> 
+        <td width=50>Color </td> 
+    <th width = 50>Name </th> 
+    <th width = 50>Hexadecimal</th> 
+    <th width = 50>RGB</th> 
+
+   <tr align = "center"> 
+   <td bgcolor="salmon"></td> 
+   <td >Salmon</td> 
+   <td >FA8072</td> 
+   <td >250-128-114</td> 
+ 
+   </tr> 
+   <tr align = "center"> 
+   <td bgcolor="gold"></td> 
+   <td >Gold</td> 
+   <td >FFD700</td> 
+   <td >255-215-0</td> 
+    </tr> 
+</table>  
+<br>
+
+<h3 align="center">Activity 3</h3>
+<table  width="30%" align="center">
+	<tr>
+        <td bgcolor="red" width=75 rowspan="2">red cell</td>
+        <td height=85 bgcolor="silver">silver cell</td>
+        
+	
+	</tr>
+	<tr>
+        <td  height=85 bgcolor="gold">gold cell</td>
+    </tr>
+</table>
+<br>
+
+<h3 align="center">Activity 4</h3>
+<table  width="30%" align="center" cellspacing=15 cellpadding=25>
+    <tr>
+        <td colspan=2 height=100 bgcolor="red">red cell</td>
+    </tr>
+	<tr>
+        <td height=100 bgcolor="silver">silver cell</td>
+        <td  height=100 bgcolor="gold">gold cell</td>
+	
+	</tr>
+</table>
+<br>
+
+<h4 align="center">Activity 5</h4>
+<table  width="50%" height=75 align="center" cellpadding=0 cellspacig=0>
+    <tr>
+        <td height=15 width=25 bgcolor="darkred"></td>
+        <td bgcolor="red" width=85></td>
+        <td bgcolor="pink" width=85></td>
+    </tr>
+       <td height=15 width=25 bgcolor="darkblue"></td>
+       <td bgcolor="blue"></td>
+       <td bgcolor="lightblue"></td>
+</table>
+<br>
+
+<h1 align="center">Michael's Schedule</h1>
+<table  width="85%" height=100 align="center" cellpadding=0 cellspacig=0>
+    <tr bgcolor="limegree">
+        
+        <th width=150 ></th> 
+        <th width=150></th>
+        <th width=150 colspan="3">Morning</th>
+        <th width=150>Lunch</th>
+        <th width=150 colspan="4">Afternoon</th>
+        <th width=150 colspan="3">Evening</th> 
+       
+    </tr>
+    <tr bgcolor="white">
+        <td><td>
+        <td>9-10 AM</td>
+        <td>10-11AM</td>
+        <td>11-12AM</td>
+        <td>1-2PM</td>
+        <td>2-3PM</td>
+        <td>3-4PM</td>
+        <td>4-5PM</td>
+        <td>5-6PM</td>
+        <td>6-7PM</td>
+        <td>7-8PM</td>
+        <td>8-9PM</td>
+    </tr>
+
+    <tr align="center" bgcolor="amesth">
+        <td rowspan="2">Work</td>
+        <td>Monday</td>
+        <td colspan="3">client meeting</td>
+        <td>Ready to study</td>
+        <td colspan="3">Study</td>
+        <td>Study WrapUp</td>
+        <td colspan="3">Movies</td>
+    </tr>
+
+    <tr align="center" bgcolor="amesth">
+        <td>Tuesday</td>
+        <td colspan="3">client meeting</td>
+        <td>Homework</td>
+        <td colspan="7">Literature Research</td>
+    </tr>
+
+    <tr align="center" bgcolor="purple">
+        <td rowspan="2">Job Hunt</td>
+        <td>Wednesday</td>
+        <td colspan="3">client meeting</td>
+        <td>Leetcode</td>
+        <td colspan="7">Portfolio building</td>
+        
+
+    </tr>
+
+    <tr align="center" bgcolor="purple">
+        <td>Thursday</td>
+        <td colspan="3">client meeting</td>
+        <td>Indeed</td>
+        <td colspan="3">Resume</td>
+        <td colspan="4">Handshake</td>
+    </tr>
+
+    <tr align="center" bgcolor="#008080">
+        <td>Projects</td>
+        <td>Friday</td>
+        <td colspan="3">Research</td>
+        <td>Web dev</td>
+        <td colspan="7" bgcolor="#008080">Research</td>
+    </tr>
+    
+  
+</table>
+
+
+</body>
+</html>
+
+

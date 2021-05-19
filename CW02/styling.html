@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>University of Georgia State Example on embedded style sheets</title>
+<style>
+    body {
+        font-family: 'Times New Roman';
+        margin-left: 20%;
+        margin-right: 20%;
+        text-align: justify;
+        background: rgb(3, 108, 117); color: darkred;
+    }
+    .chge {
+        background-color:antiquewhite;
+        color:red;
+        border: 2px solid black;
+        margin: 20px;
+        padding: 20px;
+        float:left;
+    }
+    #one {
+        text-indent: 2cm;
+        border-style: solid;
+        border-color: rgb(50, 86, 205);
+        border-width: thick;
+        margin-bottom:70px;
+        margin-top: 10px;
+        float: right;
+        background-color: chartreuse;
+    }
+    #two {
+        text-shadow: 2px 2px lime;
+    }
+    h1,h2,h3 {
+        color: darkred; margin-left: 2cm;
+    }
+    p {
+        text-indent: 2cm;
+        color: darkred;
+        margin-left: 6cm;
+    }
+    h1 {
+        color:red;
+        margin-left: 2cm;
+    }
+    h2 {
+        color:red;
+        margin-left: 4cm;
+    }
+</style>
+</head>
+<body>
+    <h1>Classwork 2</h1>
+    <h2>Exercise 1</h2>
+    <h3>About inline Styles</h3>
+    <p style="text-indent: 2cm; color:darkred;">
+        This paragraph has been formatted using the in-line style command.
+    </p>
+    <p>This paragraph has not been formatted using the in-line style command.</p>
+    
+    <div id="one">
+        <br>
+        <h3>About embedded Styles</h3>
+        <p>The result are evident in the ivory color and overall darkred color of the HTML elements.</p>
+        <p >This paragraph has been formatted using the in-line style command.</p>
+        
+    </div>
+    <br>
+    <br>
+    <br>
+    <h3>Exercise 2</h3>
+    <div class="chge" id="two">
+        <p>The times new roman has no closing <em>quotes</em>, as a result the text-align feature is not activated.That is, the text is supposed to be aligned center but it is aligned to the left.</p>
+        <p>The <em>marginleft</em> in the head tag is supposed to be <strong>margin-left.</strong> Also, it doesn't have a semicolon at the end of 2cm.</p>
+        <p>There are no heading 1, 2, & 3.</p>
+        <p >This paragraph has been formatted using the in-line style command.</p>
+    </div>
+    <br>
+
+
+    <h3>Exercise 3</h3>
+    <h1 style="color:red; margin-left: 2cm">h1 heading</h1>
+    <h2 style="color:red; margin-left: 4cm">h2 subheading</h2>
+    <p style="text-indent:2cm; color:darkred; margin-left: 6cm">Paragraph 1</p>
+    <p style="text-indent:2cm; color:darkred; margin-left: 6cm">Paragraph 2</p>
+    <h2 style="color:red; margin-left: 4cm">h2 subheading</h2>
+    <p style="text-indent:2cm; color:darkred; margin-left: 6cm">Paragraph 1</p>
+
+    <a href="externalstylesheet.css"><p>External Stylesheet</p></a>
+    <br>
+
+    <h3>Exercise 4</h3>
+    <a href="PopPage2.html"><p>embedded styled pop lyrics page</p></a>
+    <br>
+
+    <h3>Exercise 5</h3>
+    <a href="PopLyricPage.html"><p>Pop song lyrics page</p></a>
+    <br>
+
+    <h3>Exercise 6</h3>
+    <a href="CW02_ex6.html"><p>How to build a webpage for a school.</p></a>
+
+    
+</body>
+</html>

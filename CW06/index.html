@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!---the view of the whole page-->
+    <meta http-equiv="refresh" content="30">
+     <!--refreshes the page every 30 secs -->
+    <!-- <script type = "text/javascript" src="cw06.js" async ></script> -The async makes it possible to be able to load the jscript from the head tag -->
+   
+
+</head>
+<body style="background-color: rgb(43, 205, 226);">
+
+    <!--Write fibonacci here-->
+   
+    <h1 style="color: blueviolet;">Left side triangle</h1>
+    <div id="leni"></div>
+    <!--print the lefr-sided triangle-->
+    <script>
+
+        function leftTriangle(){
+             var i, j;
+             var height = 5;
+             var row = "";
+          for(i=1; i <= height; i++) {
+                //inner loop
+             for(j=1; j <= i; j++) {
+                 row += "*"; 
+            }
+             row += "<br>";
+        
+            }
+            return row;
+ }
+  var triangle = leftTriangle();
+   document.getElementById("leni").innerHTML = triangle; 
+     </script>
+
+    <br>
+
+<!-------------------------------------------------------------------------------------------->
+    <h1 style="color: blueviolet;">Sort the array</h1>
+    <p id="memo"></p>
+    <div>
+        <button  style="color:brown;" onclick="sorter()">Sort the Array</button>
+    </div>
+    <!--sorting an array-->
+<script>
+    var arr1 = [3, 8, 7, 6, 5, -4, 3, 2, 1];
+    document.getElementById("memo").innerHTML = arr1;
+
+    function sorter() 
+    {
+        arr1.sort();
+        document.getElementById("memo").innerHTML = arr1;
+    }
+</script>
+
+<!-------------------------------------------------------------------------------------------->
+    <br>
+
+    <h3 style="color: blueviolet;">Fibonacci Number</h3>
+    <script>
+        let fibonacci = (num) => {
+            if (num < 2) return num;
+                return fibonacci(num - 1) + fibonacci(num - 2);
+        }
+        var num = parseInt(prompt("Please enter a value for num","0"), 10);
+        document.write(fibonacci(num));
+    </script>
+    <br>
+    
+    
+<!-------------------------------------------------------------------------------------------->
+
+        <h4 style="color: blueviolet;">Shuffling an array of six integers</h4>
+  <!----javascript to shuffle array of 6 integers-->
+        <p id="shuffle" ></p>
+        <div >
+            <button  style="color:rgb(44, 42, 165);" onclick="shuffler()">Shuffle the Array</button>
+        </div>
+        
+    <script>
+        var arr0 = [3, 8, 7, 6, 5, -4];
+        document.getElementById("shuffle").innerHTML = arr0;
+
+            function shuffler() 
+            {
+                arr0.sort(function(a, b) {return 0.5 - Math.random()});
+                document.getElementById("shuffle").innerHTML = arr0;
+            }
+    
+    </script>
+   
+    <br>
+<!-------------------------------------------------------------------------------------------->
+
+
+    <h3 style="color: blueviolet;">Most frequent element</h3>
+    <p id="frq">Array arr2 = [3, 'a', 'a', 'a', 2, 3, 'a', 3, 'a', 2, 4, 9, 3];</p>
+    <p id="freq"></p>
+    <script>
+        var arr2=[3, 'a', 'a', 'a', 2, 3, 'a', 3, 'a', 2, 4, 9, 3];
+        var mostFreq = 1;
+        var middle = 0;
+        var elemt;
+        for (var i=0; i<arr2.length; i++)
+{
+        for (var j=i; j<arr2.length; j++)
+        {
+                if (arr2[i] == arr2[j])
+                middle++;
+                if (mostFreq<middle)
+                {
+                    mostFreq=middle; 
+                  elemt = arr2[i];
+                }
+        }
+        middle=0;
+}
+document.getElementById("freq").innerHTML = "The most frequent element is: " +elemt + " ( "  +mostFreq + " times )";
+    </script>
+
+    <p><a href="cw06_2.html" alt="ques 6">Go to question 6</a></p>
+
+
+
+</body>
+</html>

@@ -1,0 +1,24 @@
+body {
+    background-color: aquamarine;
+}
+html {
+    height: 100%;
+}
+.hello {
+    border: 10px outset orchid;
+    background-color: palevioletred;
+    text-align: center;
+}
+
+.leftTriangle {
+    border: 10px outset chartreuse;
+    background-color:darkcyan;
+    text-align: left;
+}
+
+h1 {
+    text-align: center;
+}
+
+
+
